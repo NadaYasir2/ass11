@@ -4,8 +4,13 @@ from django.contrib.auth.forms import AuthenticationForm
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
-    authentication_form = AuthenticationForm
-    redirect_authenticated_user = True
+    next_page = reverse_lazy('homepage')
+
+
 
 class CustomLogoutView(LogoutView):
-    next_page = reverse_lazy('welcome')
+    next_page = reverse_lazy('homepage')
+    http_method_names = ["get","post"]
+
+def get(self,request):
+    return super().get(request)

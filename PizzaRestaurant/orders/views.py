@@ -3,6 +3,8 @@ from django.urls import reverse_lazy
 from .models import Pizza, Order
 from .forms import OrderForm
 
+class HomepageView(TemplateView):
+    template_name = 'orders/homepage.html'
 class WelcomeView(TemplateView):
     template_name = 'orders/welcome.html'
 

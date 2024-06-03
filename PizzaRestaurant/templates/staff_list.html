@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Our Staff{% endblock %}
+
+{% block content %}
+<h1>Our Staff</h1>
+<ul>
+{% for i in staff_members %}
+    <li>{{ i.name }} - {{ i.position }}</li>
+    <p>{{ i.bio }}</p>
+{% endfor %}
+</ul>
+{% endblock %}

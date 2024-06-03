@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to Pizza Restaurant</title>
-</head>
-<body>
-    <h1>Welcome to Pizza Restaurant</h1>
-    <p><a href="{% url 'menu' %}">Go to Menu</a></p>
-    <p><a href="{% url 'order_pizza' %}">Order Pizza</a></p>
-    <p><a href="{% url 'review_list' %}">Reviews</a></p>
-    <p><a href="{% url 'staff_list' %}">Our Staff</a></p>
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Welcome to Italian Pizza</h1>
+<p>Order Pizza</p>
     {% if user.is_authenticated %}
-        <p><a href="{% url 'logout' %}">Logout</a></p>
-    {% else %}
         <p><a href="{% url 'login' %}">Login</a></p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
