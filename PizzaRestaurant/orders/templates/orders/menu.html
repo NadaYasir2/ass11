@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <ul>
+    {% for pizza in i %}
+        <li>{{ pizza.name }} - {{ pizza.description }} - ${{ pizza.price }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'welcome' %}">Back to Welcome Page</a>
+</body>
+</html>

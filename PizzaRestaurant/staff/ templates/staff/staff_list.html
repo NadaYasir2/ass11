@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Staff</title>
+</head>
+<body>
+    <h1>Our Staff</h1>
+    <ul>
+    {% for staff_member in staff_members %}
+        <li>{{ staff_member.name }} - {{ staff_member.position }}</li>
+        <p>{{ staff_member.bio }}</p>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'welcome' %}">Back to Welcome Page</a>
+</body>
+</html>
