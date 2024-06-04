@@ -3,17 +3,28 @@
 {% block title %}Reviews{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1 class="mb-4">Reviews</h1>
-    <div class="list-group">
-        {% for review in reviews %}
-            <div class="list-group-item">
-                <h5 class="mb-1">{{ review.reviewer_name }}</h5>
-                <p class="mb-1">{{ review.comment }}</p>
-                <small class="text-muted">Rating: {{ review.rating }}</small>
-            </div>
+<h1>Reviews</h1>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Reviewer Name</th>
+            <th scope="col">Pizza</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in reviews %}
+            <tr>
+                <td>{{ i.reviewer_name }}</td>
+                <td>{{ i.pizza.name }}</td>
+                <td>{{ i.rating }}</td>
+                <td>{{ i.comment }}</td>
+            </tr>
         {% endfor %}
-    </div>
+    </tbody>
+</table>
+<div>
     <a href="{% url 'add_review' %}" class="btn btn-success mt-3">Add Review</a>
     <a href="{% url 'homepage' %}" class="btn btn-dark  mt-3">Back to HomePage</a>
 </div>
