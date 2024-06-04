@@ -7,6 +7,7 @@ class HomepageView(TemplateView):
     template_name = 'orders/homepage.html'
     context_object_name = 'pizzas'
     paginate_by = 5
+
 class WelcomeView(TemplateView):
     template_name = 'orders/welcome.html'
 
