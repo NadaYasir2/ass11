@@ -4,24 +4,23 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1 class="mb-4">Add Review</h1>
+    <h1 class="mb-4">Add Staff Member</h1>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Add a New Review</h5>
+                    <h5 class="card-title">Add a New Staff Member</h5>
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary btn-block btn-success mt-3">Submit Review</button>
+                        <button type="submit" class="btn btn-primary btn-block mt-3 btn-success">Add Staff</button>
                     </form>
                     <div class="text-center mt-3">
-                        <a href="{% url 'review_list' %}" class="btn btn-dark btn-lg mx-2">Back to Reviews</a>
+                        <a href="{% url 'staff_list' %}" class="btn btn-dark btn-lg mx-2">Back to Staff List</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

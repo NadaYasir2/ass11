@@ -4,11 +4,23 @@
 {% block title %}Our Staff{% endblock %}
 
 {% block content %}
-<h1>Our Staff</h1>
-<ul>
-{% for i in staff_members %}
-    <li>{{ i.name }} - {{ i.position }}</li>
-    <p>{{ i.bio }}</p>
-{% endfor %}
-</ul>
+<div class="container mt-4">
+    <h1 class="mb-4">Our Staff</h1>
+    <div class="row">
+        {% for staff in staff_members %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ staff.name }}</h5>
+                        <p class="card-text">{{ staff.position }}</p>
+                        <p class="card-text">{{ staff.email }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'add_staff' %}" class="btn btn-primary btn-success  mt-3">Add Staff Member</a>
+    <a href="{% url 'homepage' %}" class="btn btn-dark mt-3">Back to HomePage</a>
+</div>
 {% endblock %}
